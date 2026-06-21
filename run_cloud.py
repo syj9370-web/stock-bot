@@ -34,20 +34,19 @@ def refresh_kakao_token():
 def send_kakao(message: str, token: str):
     import urllib.parse
     headers = {"Authorization": f"Bearer {token}",
-               "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"}
+               "Content-Type": "application/x-www-form-urlencoded"}
     template = {
         "object_type": "text",
         "text": message,
         "link": {"web_url": REPORT_URL, "mobile_web_url": REPORT_URL},
         "button_title": "리포트 보기"
     }
-    body = urllib.parse.urlencode(
-        {"template_object": json.dumps(template, ensure_ascii=False)},
-        quote_via=urllib.parse.quote
-    ).encode("utf-8")
+    # ensure_ascii=True → 한글을 \uXXXX로 이스케이프, latin-1 에러 방지
+    template_str = json.dumps(template, ensure_ascii=True)
+    body = f"template_object={urllib.parse.quote(template_str, safe='')}"
     resp = requests.post("https://kapi.kakao.com/v2/api/talk/memo/default/send",
                          headers=headers,
-                         data=body)
+                         data=body.encode("ascii"))
     return resp.status_code == 200
 
 # ──────────────────────────────────────────────
