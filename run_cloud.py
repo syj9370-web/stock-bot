@@ -32,17 +32,22 @@ def refresh_kakao_token():
     return data.get("access_token", ACCESS_TOKEN)
 
 def send_kakao(message: str, token: str):
+    import urllib.parse
     headers = {"Authorization": f"Bearer {token}",
-               "Content-Type": "application/x-www-form-urlencoded"}
+               "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"}
     template = {
         "object_type": "text",
         "text": message,
         "link": {"web_url": REPORT_URL, "mobile_web_url": REPORT_URL},
-        "button_title": "📊 리포트 보기"
+        "button_title": "리포트 보기"
     }
+    body = urllib.parse.urlencode(
+        {"template_object": json.dumps(template, ensure_ascii=False)},
+        quote_via=urllib.parse.quote
+    ).encode("utf-8")
     resp = requests.post("https://kapi.kakao.com/v2/api/talk/memo/default/send",
                          headers=headers,
-                         data={"template_object": json.dumps(template, ensure_ascii=False)})
+                         data=body)
     return resp.status_code == 200
 
 # ──────────────────────────────────────────────
