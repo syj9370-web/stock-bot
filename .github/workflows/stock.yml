@@ -28,7 +28,7 @@ jobs:
           KAKAO_REFRESH_TOKEN: ${{ secrets.KAKAO_REFRESH_TOKEN }}
         run: python run_cloud.py
 
-      - name: 리포트 업로드 (GitHub Pages)
+      - name: 리포트 GitHub Pages 배포
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

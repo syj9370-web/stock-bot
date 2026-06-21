@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>주식 추천 2026년 06월 19일</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Apple SD Gothic Neo',sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh}
+  .header{background:linear-gradient(135deg,#1e3a5f,#1e293b);padding:2rem;text-align:center;border-bottom:1px solid #334155}
+  .header h1{font-size:1.6rem;font-weight:800;margin-bottom:.3rem}
+  .header p{color:#94a3b8;font-size:.9rem}
+  .container{max-width:900px;margin:0 auto;padding:1.5rem 1rem}
+  h2{font-size:1rem;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em;margin:1.5rem 0 .75rem}
+  .card{background:#1e293b;border-radius:16px;padding:1.25rem;margin-bottom:1rem;border:1px solid #334155;position:relative;overflow:hidden}
+  .rank-badge{position:absolute;top:0;right:0;padding:.3rem .8rem;border-radius:0 16px 0 12px;color:white;font-weight:700;font-size:.8rem}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem}
+  .stock-name{font-size:1.15rem;font-weight:700}
+  .stock-meta{color:#64748b;font-size:.8rem;margin-top:.15rem}
+  .price{font-size:1.2rem;font-weight:700;text-align:right}
+  .pos{color:#4ade80}.neg{color:#f87171}
+  .change{font-size:.9rem;text-align:right;font-weight:600}
+  .score-bar-wrap{display:flex;align-items:center;gap:.5rem;margin:.5rem 0;font-size:.75rem;color:#64748b}
+  .score-bar{flex:1;background:#0f172a;border-radius:99px;height:6px}
+  .score-fill{height:6px;border-radius:99px;transition:width .3s}
+  .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin:.75rem 0;background:#0f172a;border-radius:10px;padding:.75rem}
+  .metric label{display:block;font-size:.65rem;color:#64748b;margin-bottom:.15rem}
+  .metric strong{font-size:.9rem}
+  .tags{display:flex;flex-wrap:wrap;gap:.35rem;margin:.5rem 0}
+  .tag{background:#1d4ed820;color:#60a5fa;padding:2px 8px;border-radius:99px;font-size:.72rem;border:1px solid #1d4ed840}
+  .closes{font-size:.75rem;color:#64748b;margin-top:.5rem}
+  .etf-card{background:#1e293b;border:1px solid #334155;border-radius:10px;padding:.75rem 1rem;display:flex;align-items:center;gap:1rem;margin-bottom:.5rem}
+  .etf-name{font-weight:700;font-size:.95rem}
+  .etf-theme{background:#0f172a;padding:2px 8px;border-radius:99px;font-size:.72rem;color:#94a3b8}
+  .etf-price{margin-left:auto;font-weight:600}
+  .sector-row{display:flex;align-items:center;gap:.75rem;margin-bottom:.5rem}
+  .sector-name{width:90px;font-size:.82rem;text-align:right;color:#94a3b8}
+  .sector-bar-wrap{flex:1;background:#0f172a;border-radius:99px;height:8px}
+  .sector-bar{height:8px;border-radius:99px;background:linear-gradient(90deg,#3b82f6,#8b5cf6)}
+  .sector-score{width:30px;font-size:.8rem;color:#64748b}
+  .ai-box{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:1.25rem;font-size:.88rem;line-height:1.8;color:#cbd5e1}
+  .footer{text-align:center;color:#475569;font-size:.75rem;padding:2rem;border-top:1px solid #1e293b;margin-top:1rem}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>📈 주식 추천 리포트</h1>
+  <p>2026년 06월 19일 · AI 기술적 분석</p>
+</div>
+<div class="container">
+  <h2>📊 섹터 강도</h2>
+  
+        <div class="sector-row">
+          <span class="sector-name">배터리</span>
+          <div class="sector-bar-wrap">
+            <div class="sector-bar" style="width:75%"></div>
+          </div>
+          <span class="sector-score">75</span>
+        </div>
+        <div class="sector-row">
+          <span class="sector-name">반도체</span>
+          <div class="sector-bar-wrap">
+            <div class="sector-bar" style="width:68%"></div>
+          </div>
+          <span class="sector-score">68</span>
+        </div>
+        <div class="sector-row">
+          <span class="sector-name">금융</span>
+          <div class="sector-bar-wrap">
+            <div class="sector-bar" style="width:64%"></div>
+          </div>
+          <span class="sector-score">64</span>
+        </div>
+
+  <h2>🏆 주식 TOP 5</h2>
+  
+        <div class="card">
+          <div class="rank-badge" style="background:#f59e0b">1위</div>
+          <div class="card-top">
+            <div>
+              <div class="stock-name">삼성SDI</div>
+              <div class="stock-meta">006400 · 배터리</div>
+            </div>
+            <div class="price-block">
+              <div class="price" id="price-006400">555,000원</div>
+              <div class="change pos" id="change-006400">+6.32%</div>
+            </div>
+          </div>
+          <div class="score-bar-wrap">
+            <span>기술점수</span>
+            <div class="score-bar"><div class="score-fill" style="width:75%;background:#f59e0b"></div></div>
+            <span>75점</span>
+          </div>
+          <div class="metrics">
+            <div class="metric"><label>목표가</label><strong>593,850원</strong></div>
+            <div class="metric"><label>손절가</label><strong>527,250원</strong></div>
+            <div class="metric"><label>PER</label><strong data-code="006400" data-field="per">N/A</strong></div>
+            <div class="metric"><label>RSI</label><strong>34.6</strong></div>
+            <div class="metric"><label>MA20</label><strong>565,300원</strong></div>
+            <div class="metric"><label>MA60</label><strong>544,075원</strong></div>
+          </div>
+          <div class="tags"><span class="tag">RSI 과매도(34.6)</span><span class="tag">5일 +2.4%</span></div>
+          <div class="closes">최근 5일: 542,000  →  546,000  →  536,000  →  520,000  →  555,000</div>
+        </div>
+        <div class="card">
+          <div class="rank-badge" style="background:#94a3b8">2위</div>
+          <div class="card-top">
+            <div>
+              <div class="stock-name">삼성전자</div>
+              <div class="stock-meta">005930 · 반도체</div>
+            </div>
+            <div class="price-block">
+              <div class="price" id="price-005930">354,000원</div>
+              <div class="change neg" id="change-005930">-2.34%</div>
+            </div>
+          </div>
+          <div class="score-bar-wrap">
+            <span>기술점수</span>
+            <div class="score-bar"><div class="score-fill" style="width:70%;background:#94a3b8"></div></div>
+            <span>70점</span>
+          </div>
+          <div class="metrics">
+            <div class="metric"><label>목표가</label><strong>378,780원</strong></div>
+            <div class="metric"><label>손절가</label><strong>336,300원</strong></div>
+            <div class="metric"><label>PER</label><strong data-code="005930" data-field="per">N/A</strong></div>
+            <div class="metric"><label>RSI</label><strong>62.8</strong></div>
+            <div class="metric"><label>MA20</label><strong>315,088원</strong></div>
+            <div class="metric"><label>MA60</label><strong>250,594원</strong></div>
+          </div>
+          <div class="tags"><span class="tag">이평 정배열</span><span class="tag">5일 +6.0%</span></div>
+          <div class="closes">최근 5일: 334,000  →  332,500  →  331,500  →  344,500  →  354,000</div>
+        </div>
+        <div class="card">
+          <div class="rank-badge" style="background:#cd7c39">3위</div>
+          <div class="card-top">
+            <div>
+              <div class="stock-name">KB금융</div>
+              <div class="stock-meta">105560 · 금융</div>
+            </div>
+            <div class="price-block">
+              <div class="price" id="price-105560">158,300원</div>
+              <div class="change neg" id="change-105560">-2.94%</div>
+            </div>
+          </div>
+          <div class="score-bar-wrap">
+            <span>기술점수</span>
+            <div class="score-bar"><div class="score-fill" style="width:66%;background:#cd7c39"></div></div>
+            <span>66점</span>
+          </div>
+          <div class="metrics">
+            <div class="metric"><label>목표가</label><strong>169,381원</strong></div>
+            <div class="metric"><label>손절가</label><strong>150,385원</strong></div>
+            <div class="metric"><label>PER</label><strong data-code="105560" data-field="per">N/A</strong></div>
+            <div class="metric"><label>RSI</label><strong>56.8</strong></div>
+            <div class="metric"><label>MA20</label><strong>154,995원</strong></div>
+            <div class="metric"><label>MA60</label><strong>153,612원</strong></div>
+          </div>
+          <div class="tags"><span class="tag">MA20>60 정배열</span><span class="tag">30일선 지지</span></div>
+          <div class="closes">최근 5일: 162,200  →  170,600  →  163,500  →  158,700  →  158,300</div>
+        </div>
+        <div class="card">
+          <div class="rank-badge" style="background:#3b82f6">4위</div>
+          <div class="card-top">
+            <div>
+              <div class="stock-name">SK하이닉스</div>
+              <div class="stock-meta">000660 · 반도체</div>
+            </div>
+            <div class="price-block">
+              <div class="price" id="price-000660">2,764,000원</div>
+              <div class="change pos" id="change-000660">+2.94%</div>
+            </div>
+          </div>
+          <div class="score-bar-wrap">
+            <span>기술점수</span>
+            <div class="score-bar"><div class="score-fill" style="width:65%;background:#3b82f6"></div></div>
+            <span>65점</span>
+          </div>
+          <div class="metrics">
+            <div class="metric"><label>목표가</label><strong>2,957,480원</strong></div>
+            <div class="metric"><label>손절가</label><strong>2,625,800원</strong></div>
+            <div class="metric"><label>PER</label><strong data-code="000660" data-field="per">N/A</strong></div>
+            <div class="metric"><label>RSI</label><strong>66.5</strong></div>
+            <div class="metric"><label>MA20</label><strong>2,170,125원</strong></div>
+            <div class="metric"><label>MA60</label><strong>1,548,742원</strong></div>
+          </div>
+          <div class="tags"><span class="tag">이평 정배열</span></div>
+          <div class="closes">최근 5일: 2,265,000  →  2,286,000  →  2,334,000  →  2,556,000  →  2,764,000</div>
+        </div>
+        <div class="card">
+          <div class="rank-badge" style="background:#8b5cf6">5위</div>
+          <div class="card-top">
+            <div>
+              <div class="stock-name">하나금융지주</div>
+              <div class="stock-meta">086790 · 금융</div>
+            </div>
+            <div class="price-block">
+              <div class="price" id="price-086790">123,500원</div>
+              <div class="change neg" id="change-086790">-2.06%</div>
+            </div>
+          </div>
+          <div class="score-bar-wrap">
+            <span>기술점수</span>
+            <div class="score-bar"><div class="score-fill" style="width:63%;background:#8b5cf6"></div></div>
+            <span>63점</span>
+          </div>
+          <div class="metrics">
+            <div class="metric"><label>목표가</label><strong>132,145원</strong></div>
+            <div class="metric"><label>손절가</label><strong>117,325원</strong></div>
+            <div class="metric"><label>PER</label><strong data-code="086790" data-field="per">N/A</strong></div>
+            <div class="metric"><label>RSI</label><strong>61.5</strong></div>
+            <div class="metric"><label>MA20</label><strong>117,645원</strong></div>
+            <div class="metric"><label>MA60</label><strong>117,233원</strong></div>
+          </div>
+          <div class="tags"><span class="tag">MA20>60 정배열</span><span class="tag">5일 +1.8%</span></div>
+          <div class="closes">최근 5일: 121,300  →  128,500  →  126,400  →  125,500  →  123,500</div>
+        </div>
+
+  <h2>💼 ETF 추천</h2>
+  
+        <div class="etf-card">
+          <span class="etf-name">KODEX 200</span>
+          <span class="etf-theme">국내시장대표</span>
+          <span class="etf-price">146,910원</span>
+          <span class="change neg">-0.02%</span>
+        </div>
+        <div class="etf-card">
+          <span class="etf-name">KODEX 반도체</span>
+          <span class="etf-theme">반도체</span>
+          <span class="etf-price">181,015원</span>
+          <span class="change neg">-0.81%</span>
+        </div>
+
+  <h2>🤖 AI 종합 분석</h2>
+  <div class="ai-box"><b>[시장 분석]</b><br>오늘 기술적 점수 기준 주도 섹터는 배터리입니다. 상위 종목들의 평균 기술 점수는 68점으로 매수 우위입니다. RSI 과매도 구간 진입 종목 위주로 단기 반등 가능성에 주목하세요.<br><br><b>[주식 추천 TOP 5]</b><br>1위: 삼성SDI (배터리)<br>현재가: 555,000원 | 목표가: 593,850원 | 손절가: 527,250원 | 예상수익: +7%<br>PER N/A배 / RSI 34.6 / MA20 565,300원<br><br>2위: 삼성전자 (반도체)<br>현재가: 354,000원 | 목표가: 378,780원 | 손절가: 336,300원 | 예상수익: +7%<br>PER N/A배 / RSI 62.8 / MA20 315,088원<br><br>3위: KB금융 (금융)<br>현재가: 158,300원 | 목표가: 169,381원 | 손절가: 150,385원 | 예상수익: +7%<br>PER N/A배 / RSI 56.8 / MA20 154,995원<br><br>4위: SK하이닉스 (반도체)<br>현재가: 2,764,000원 | 목표가: 2,957,480원 | 손절가: 2,625,800원 | 예상수익: +7%<br>PER N/A배 / RSI 66.5 / MA20 2,170,125원<br><br>5위: 하나금융지주 (금융)<br>현재가: 123,500원 | 목표가: 132,145원 | 손절가: 117,325원 | 예상수익: +7%<br>PER N/A배 / RSI 61.5 / MA20 117,645원<br><br><b>[ETF 추천 TOP 2]</b><br>1위: KODEX 200 | 추천이유: 국내시장대표 섹터 대표 ETF. 기술점수 70점, 개별 종목 대비 분산 투자 효과.<br><br>2위: KODEX 반도체 | 추천이유: 반도체 섹터 대표 ETF. 기술점수 70점, 개별 종목 대비 분산 투자 효과.<br><br><b>[오늘의 한줄 전략]</b><br>배터리 섹터 중심, RSI 저점 종목 분할 매수 전략 권장.</div>
+</div>
+<div class="footer">
+  ⚠️ 본 리포트는 AI 분석 결과입니다. 투자 손익의 책임은 본인에게 있습니다.<br>
+  <span id="last-update" style="color:#475569;font-size:.7rem">현재가 자동 갱신 중...</span>
+</div>
+<script>
+const codes = {"006400": "006400.KS", "005930": "005930.KS", "105560": "105560.KS", "000660": "000660.KS", "086790": "086790.KS"};
+
+async function updatePrices() {
+  for (const [code, ticker] of Object.entries(codes)) {
+    try {
+      const url = `https://query1.finance.yahoo.com/v8/finance/chart/${ticker}?interval=1d&range=1d`;
+      const r = await fetch(url);
+      const d = await r.json();
+      const meta = d?.chart?.result?.[0]?.meta;
+      if (!meta) continue;
+
+      const price = meta.regularMarketPrice;
+      const prev  = meta.previousClose;
+      const chg   = ((price - prev) / prev * 100).toFixed(2);
+      const isPos = chg >= 0;
+
+      const priceEl  = document.getElementById('price-' + code);
+      const changeEl = document.getElementById('change-' + code);
+      if (priceEl)  priceEl.textContent  = price.toLocaleString('ko-KR') + '원';
+      if (changeEl) {
+        changeEl.textContent  = (isPos ? '+' : '') + chg + '%';
+        changeEl.style.color  = isPos ? '#4ade80' : '#f87171';
+      }
+    } catch(e) {}
+  }
+  document.getElementById('last-update').textContent =
+    '현재가 갱신: ' + new Date().toLocaleTimeString('ko-KR');
+}
+
+updatePrices();
+setInterval(updatePrices, 30000);
+</script>
+</body>
+</html>

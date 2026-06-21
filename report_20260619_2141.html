@@ -1,0 +1,3824 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 종목추천 2026년 06월 19일 (금)</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,'Apple SD Gothic Neo',sans-serif;background:#f5f6f8;color:#111;min-height:100vh;max-width:680px;margin:0 auto}
+.topbar{background:#fff;padding:.9rem 1rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #eee;position:sticky;top:0;z-index:10}
+.topbar-title{font-size:1rem;font-weight:800;color:#111}
+.topbar-date{font-size:.8rem;color:#888}
+/* 탭 */
+.tab-nav{background:#fff;display:flex;border-bottom:2px solid #eee;position:sticky;top:49px;z-index:9}
+.tab-btn{flex:1;padding:.65rem .5rem;font-size:.85rem;font-weight:600;color:#999;border:none;background:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:.2s}
+.tab-btn.active{color:#111;border-bottom:2px solid #111}
+.tab-panel{display:none}.tab-panel.active{display:block}
+/* 공통 */
+.section-label{font-size:.72rem;font-weight:700;color:#888;letter-spacing:.08em;text-transform:uppercase;padding:.9rem 1rem .4rem}
+.market-box{background:#fff;margin:.5rem .75rem;border-radius:12px;padding:1rem 1.1rem;font-size:.88rem;line-height:1.7;color:#333;border-left:3px solid #3b82f6}
+.strategy-box{background:#fffbeb;margin:.5rem .75rem;border-radius:12px;padding:.9rem 1.1rem;font-size:.88rem;color:#92400e;border-left:3px solid #f59e0b}
+.item{background:#fff;margin:.5rem .75rem;border-radius:14px;padding:1.1rem;border:1px solid #eee}
+.item-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.6rem}
+.left{display:flex;align-items:flex-start;gap:.6rem}
+.rank-num{width:26px;height:26px;border-radius:50%;background:#111;color:#fff;font-size:.78rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.sname{font-size:1.05rem;font-weight:800;color:#111}
+.scode{font-size:.78rem;font-weight:400;color:#aaa;margin-left:4px}
+.ssector{font-size:.76rem;color:#888;margin-top:2px}
+.right{text-align:right}
+.sprice{font-size:1.05rem;font-weight:700}
+.schange{font-size:.82rem;font-weight:600;margin-top:2px}
+.pos{color:#e5341a}.neg{color:#1a73e8}
+.tags{display:flex;flex-wrap:wrap;gap:.3rem;margin:.5rem 0 .7rem}
+.tag{background:#f0f4ff;color:#3b5bdb;padding:3px 9px;border-radius:99px;font-size:.72rem;font-weight:500}
+.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;background:#f8f9fa;border-radius:10px;padding:.7rem .8rem;margin-bottom:.8rem}
+.kpi{display:flex;flex-direction:column;gap:2px}
+.kl{font-size:.63rem;color:#999}
+.kv{font-size:.88rem;font-weight:600;color:#111}
+.kv.target{color:#e5341a}.kv.stop{color:#1a73e8}
+.ind{font-size:.65rem;color:#999;font-weight:400}
+.invest-box{border-top:1px solid #f0f0f0;padding-top:.75rem}
+.invest-title{font-size:.82rem;font-weight:800;color:#333;margin-bottom:.35rem}
+.invest-body{font-size:.84rem;line-height:1.75;color:#444}
+.etf-item{background:#fff;margin:.5rem .75rem;border-radius:12px;padding:.9rem 1.1rem;border:1px solid #eee}
+.etf-left{}
+.footer{text-align:center;font-size:.72rem;color:#bbb;padding:1.5rem 1rem 2rem;}
+.nxt-price{font-size:.72rem;color:#888;margin-top:2px;text-align:right}
+.update-time{font-size:.7rem;color:#bbb;text-align:center;padding:.3rem}
+.sec-row{display:flex;align-items:center;gap:.6rem;padding:.3rem 0}
+.sec-name{width:72px;font-size:.78rem;color:#555;text-align:right;flex-shrink:0}
+.sec-bar-wrap{flex:1;background:#eee;border-radius:99px;height:7px}
+.sec-bar{height:7px;border-radius:99px;transition:width .4s}
+.sec-chg{width:70px;font-size:.78rem;font-weight:600;text-align:right;flex-shrink:0}
+.sector-wrap{background:#fff;margin:.5rem .75rem;border-radius:14px;padding:.9rem 1.1rem;border:1px solid #eee}
+/* 산업별 분석 탭 */
+.ind-section{background:#fff;margin:.6rem .75rem;border-radius:14px;border:1px solid #eee;overflow:hidden}
+.ind-section-title{font-size:.78rem;font-weight:800;color:#fff;background:#1e293b;padding:.55rem 1rem;letter-spacing:.05em}
+.ind-row{display:grid;grid-template-columns:1fr 1fr 1.1fr 1.1fr;gap:.3rem;padding:.6rem 1rem;border-bottom:1px solid #f3f3f3;align-items:center}
+.ind-row:last-child{border-bottom:none}
+.ind-sname{font-size:.84rem;font-weight:700;color:#111;display:block}
+.ind-code{font-size:.68rem;color:#bbb}
+.ind-price{font-size:.82rem;font-weight:600;display:block}
+.ind-chg{font-size:.72rem;font-weight:600;display:block}
+.ind-nxt{font-size:.65rem;color:#999;display:block}
+.rsi-label-row{display:flex;justify-content:space-between;margin-bottom:3px}
+.rsi-label{font-size:.63rem;color:#999}
+.rsi-val{font-size:.75rem;font-weight:700}
+.rsi-bar-bg{position:relative;background:#eee;border-radius:99px;height:5px}
+.rsi-bar{height:5px;border-radius:99px}
+.rsi-mark30{position:absolute;left:30%;top:-2px;width:1px;height:9px;background:#aaa;opacity:.4}
+.rsi-mark70{position:absolute;left:70%;top:-2px;width:1px;height:9px;background:#aaa;opacity:.4}
+.ind-levels{font-size:.7rem}
+.level-row{display:flex;justify-content:space-between;padding:1px 0}
+.lk{color:#999;width:30px}
+.lv{font-weight:600}
+.lv.poc{color:#7c3aed}
+.lv.sup{color:#059669}
+.lv.res{color:#dc2626}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-title">📈 AI 종목추천</div>
+  <div class="topbar-date">2026년 06월 19일 (금) 21:41</div>
+</div>
+
+<div class="tab-nav">
+  <button class="tab-btn active" onclick="switchTab('recommend')">오늘의 추천</button>
+  <button class="tab-btn" onclick="switchTab('industry')">산업별 분석</button>
+</div>
+
+<!-- 탭1: 오늘의 추천 -->
+<div class="tab-panel active" id="tab-recommend">
+
+<div class="section-label">섹터 동향 (ETF 등락률)</div><div class="sector-wrap">
+  <div class="sec-row">
+    <span class="sec-name">코스피200</span>
+    <div class="sec-bar-wrap">
+      <div class="sec-bar" style="width:0.3%;background:#1a73e8"></div>
+    </div>
+    <span class="sec-chg" style="color:#1a73e8">▼ 0.02%</span>
+  </div>
+  <div class="sec-row">
+    <span class="sec-name">자동차</span>
+    <div class="sec-bar-wrap">
+      <div class="sec-bar" style="width:5.3999999999999995%;background:#1a73e8"></div>
+    </div>
+    <span class="sec-chg" style="color:#1a73e8">▼ 0.36%</span>
+  </div>
+  <div class="sec-row">
+    <span class="sec-name">2차전지</span>
+    <div class="sec-bar-wrap">
+      <div class="sec-bar" style="width:10.5%;background:#1a73e8"></div>
+    </div>
+    <span class="sec-chg" style="color:#1a73e8">▼ 0.70%</span>
+  </div>
+  <div class="sec-row">
+    <span class="sec-name">반도체</span>
+    <div class="sec-bar-wrap">
+      <div class="sec-bar" style="width:12.15%;background:#1a73e8"></div>
+    </div>
+    <span class="sec-chg" style="color:#1a73e8">▼ 0.81%</span>
+  </div>
+  <div class="sec-row">
+    <span class="sec-name">금융</span>
+    <div class="sec-bar-wrap">
+      <div class="sec-bar" style="width:36.75%;background:#1a73e8"></div>
+    </div>
+    <span class="sec-chg" style="color:#1a73e8">▼ 2.45%</span>
+  </div>
+  <div class="sec-row">
+    <span class="sec-name">IT</span>
+    <div class="sec-bar-wrap">
+      <div class="sec-bar" style="width:45.6%;background:#1a73e8"></div>
+    </div>
+    <span class="sec-chg" style="color:#1a73e8">▼ 3.04%</span>
+  </div>
+  <div class="sec-row">
+    <span class="sec-name">헬스케어</span>
+    <div class="sec-bar-wrap">
+      <div class="sec-bar" style="width:48.75%;background:#1a73e8"></div>
+    </div>
+    <span class="sec-chg" style="color:#1a73e8">▼ 3.25%</span>
+  </div>
+  <div class="sec-row">
+    <span class="sec-name">화학</span>
+    <div class="sec-bar-wrap">
+      <div class="sec-bar" style="width:55.800000000000004%;background:#1a73e8"></div>
+    </div>
+    <span class="sec-chg" style="color:#1a73e8">▼ 3.72%</span>
+  </div>
+  <div class="sec-row">
+    <span class="sec-name">코스닥150</span>
+    <div class="sec-bar-wrap">
+      <div class="sec-bar" style="width:58.199999999999996%;background:#1a73e8"></div>
+    </div>
+    <span class="sec-chg" style="color:#1a73e8">▼ 3.88%</span>
+  </div>
+  <div class="sec-row">
+    <span class="sec-name">철강</span>
+    <div class="sec-bar-wrap">
+      <div class="sec-bar" style="width:100%;background:#1a73e8"></div>
+    </div>
+    <span class="sec-chg" style="color:#1a73e8">▼ 6.75%</span>
+  </div></div>
+
+<div class="section-label">시장 분석</div><div class="market-box">오늘 시장의 핵심 흐름은 기술적 분석과 펀더멘털 분석의 조합으로, 과매도 상태에서 탈출하는 종목과 저평가된 종목에 대한 관심이 집중되고 있다. 주도 섹터는 반도체와 게임 섹터가 강세를 보이고 있으며, 이에 따라 관련 종목들의 상승이 예상된다. 또한, 최근 5일 상승 모멘텀이 살아있는 종목에 대한 투자 관심이 높아지고 있다.</div>
+
+<div class="section-label">오늘의 종목 TOP 5</div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="left">
+        <span class="rank-num">1</span>
+        <div>
+          <div class="sname">삼성SDI <span class="scode">006400</span></div>
+          <div class="ssector">배터리</div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="sprice" id="price-006400">555,000원</div>
+        <div class="schange pos" id="change-006400">▲ 6.32%</div>
+        
+      </div>
+    </div>
+    <div class="tags"><span class="tag">#RSI과매도(34.6)</span> <span class="tag">#5일+2.4%</span></div>
+    <div class="kpi-row">
+      <div class="kpi"><span class="kl">목표가</span><span class="kv target">593,850원</span></div>
+      <div class="kpi"><span class="kl">손절가</span><span class="kv stop">527,250원</span></div>
+      <div class="kpi"><span class="kl">PER</span><span class="kv">16.6배<small class="ind"> (업종 29.2배)</small></span></div>
+      <div class="kpi"><span class="kl">RSI</span><span class="kv">34.6</span></div>
+      <div class="kpi"><span class="kl">MA20</span><span class="kv">565,300</span></div>
+      <div class="kpi"><span class="kl">MA60</span><span class="kv">544,075</span></div>
+    </div>
+    <div class="invest-box">
+      <div class="invest-title">[투자포인트]</div>
+      <div class="invest-body">현재가: 555,000원 | 목표가: 610,000원 | 손절가: 500,000원 | 예상수익: +10% | 투자기간: 2주<br>매수근거: RSI가 34.6으로 과매도 상태에서 탈출하고 있으며, 5일간 +2.4%의 상승 모멘텀을 보이고 있다. 또한, MA20와 MA60의 정배열이 유지되고 있으며, PER이 16.6배로 업종 평균 대비 저평가된 상태이다. 이는 단기적으로 10% 이상의 수익을 기대할 수 있는 근거이다.<br>리스크: 글로벌 경제 침체로 인한 2차전지 수요 감소가 주요 하락 리스크이다.</div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="item-header">
+      <div class="left">
+        <span class="rank-num">2</span>
+        <div>
+          <div class="sname">엔씨소프트 <span class="scode">036570</span></div>
+          <div class="ssector">게임</div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="sprice" id="price-036570">277,000원</div>
+        <div class="schange pos" id="change-036570">▲ 7.16%</div>
+        
+      </div>
+    </div>
+    <div class="tags"><span class="tag">#RSI저점(47.9)</span> <span class="tag">#MA20>60정배열</span> <span class="tag">#5일+6.7%</span></div>
+    <div class="kpi-row">
+      <div class="kpi"><span class="kl">목표가</span><span class="kv target">296,390원</span></div>
+      <div class="kpi"><span class="kl">손절가</span><span class="kv stop">263,150원</span></div>
+      <div class="kpi"><span class="kl">PER</span><span class="kv">24.9배<small class="ind"> (업종 42.7배)</small></span></div>
+      <div class="kpi"><span class="kl">RSI</span><span class="kv">47.9</span></div>
+      <div class="kpi"><span class="kl">MA20</span><span class="kv">265,400</span></div>
+      <div class="kpi"><span class="kl">MA60</span><span class="kv">250,525</span></div>
+    </div>
+    <div class="invest-box">
+      <div class="invest-title">[투자포인트]</div>
+      <div class="invest-body">현재가: 277,000원 | 목표가: 310,000원 | 손절가: 250,000원 | 예상수익: +12% | 투자기간: 2주<br>매수근거: RSI가 47.9로 중립 구간에 진입하고 있으며, MA20와 MA60의 정배열이 유지되고 있다. 또한, 5일간 +6.7%의 상승 모멘텀을 보이고 있으며, PER이 24.9배로 업종 평균 대비 저평가된 상태이다. 이는 단기적으로 10% 이상의 수익을 기대할 수 있는 근거이다.<br>리스크: 게임 시장의 경쟁 심화로 인한 수익성 악화가 주요 하락 리스크이다.</div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="item-header">
+      <div class="left">
+        <span class="rank-num">3</span>
+        <div>
+          <div class="sname">삼성전자 <span class="scode">005930</span></div>
+          <div class="ssector">반도체</div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="sprice" id="price-005930">354,000원</div>
+        <div class="schange neg" id="change-005930">▼ 2.34%</div>
+        
+      </div>
+    </div>
+    <div class="tags"><span class="tag">#이평정배열</span> <span class="tag">#5일+6.0%</span></div>
+    <div class="kpi-row">
+      <div class="kpi"><span class="kl">목표가</span><span class="kv target">378,780원</span></div>
+      <div class="kpi"><span class="kl">손절가</span><span class="kv stop">336,300원</span></div>
+      <div class="kpi"><span class="kl">PER</span><span class="kv">36.8배<small class="ind"> (업종 10.8배)</small></span></div>
+      <div class="kpi"><span class="kl">RSI</span><span class="kv">62.8</span></div>
+      <div class="kpi"><span class="kl">MA20</span><span class="kv">315,088</span></div>
+      <div class="kpi"><span class="kl">MA60</span><span class="kv">250,594</span></div>
+    </div>
+    <div class="invest-box">
+      <div class="invest-title">[투자포인트]</div>
+      <div class="invest-body">현재가: 354,000원 | 목표가: 390,000원 | 손절가: 320,000원 | 예상수익: +10% | 투자기간: 2주<br>매수근거: RSI가 62.8로 중립 구간에 진입하고 있으며, 5일간 +6.0%의 상승 모멘텀을 보이고 있다. 또한, MA20와 MA60의 정배열이 유지되고 있으며, PER이 36.8배로 업종 평균 대비 저평가된 상태이다. 이는 단기적으로 10% 이상의 수익을 기대할 수 있는 근거이다.<br>리스크: 반도체 시장의 수요 감소로 인한 수익성 악화가 주요 하락 리스크이다.</div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="item-header">
+      <div class="left">
+        <span class="rank-num">4</span>
+        <div>
+          <div class="sname">KB금융 <span class="scode">105560</span></div>
+          <div class="ssector">금융</div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="sprice" id="price-105560">158,300원</div>
+        <div class="schange neg" id="change-105560">▼ 2.94%</div>
+        
+      </div>
+    </div>
+    <div class="tags"><span class="tag">#MA20>60정배열</span> <span class="tag">#30일선지지</span></div>
+    <div class="kpi-row">
+      <div class="kpi"><span class="kl">목표가</span><span class="kv target">169,381원</span></div>
+      <div class="kpi"><span class="kl">손절가</span><span class="kv stop">150,385원</span></div>
+      <div class="kpi"><span class="kl">PER</span><span class="kv">4.8배<small class="ind"> (업종 6.5배)</small></span></div>
+      <div class="kpi"><span class="kl">RSI</span><span class="kv">56.8</span></div>
+      <div class="kpi"><span class="kl">MA20</span><span class="kv">154,995</span></div>
+      <div class="kpi"><span class="kl">MA60</span><span class="kv">153,612</span></div>
+    </div>
+    <div class="invest-box">
+      <div class="invest-title">[투자포인트]</div>
+      <div class="invest-body">현재가: 158,300원 | 목표가: 175,000원 | 손절가: 145,000원 | 예상수익: +10% | 투자기간: 2주<br>매수근거: RSI가 56.8로 중립 구간에 진입하고 있으며, MA20와 MA60의 정배열이 유지되고 있다. 또한, 30일선이 지지ระด을 형성하고 있으며, PER이 4.8배로 업종 평균 대비 저평가된 상태이다. 이는 단기적으로 10% 이상의 수익을 기대할 수 있는 근거이다.<br>리스크: 금융 시장의 불안정성으로 인한 수익성 악화가 주요 하락 리스크이다.</div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="item-header">
+      <div class="left">
+        <span class="rank-num">5</span>
+        <div>
+          <div class="sname">SK하이닉스 <span class="scode">000660</span></div>
+          <div class="ssector">반도체</div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="sprice" id="price-000660">2,764,000원</div>
+        <div class="schange pos" id="change-000660">▲ 2.94%</div>
+        
+      </div>
+    </div>
+    <div class="tags"><span class="tag">#이평정배열</span></div>
+    <div class="kpi-row">
+      <div class="kpi"><span class="kl">목표가</span><span class="kv target">2,957,480원</span></div>
+      <div class="kpi"><span class="kl">손절가</span><span class="kv stop">2,625,800원</span></div>
+      <div class="kpi"><span class="kl">PER</span><span class="kv">6.4배<small class="ind"> (업종 11.0배)</small></span></div>
+      <div class="kpi"><span class="kl">RSI</span><span class="kv">66.5</span></div>
+      <div class="kpi"><span class="kl">MA20</span><span class="kv">2,170,125</span></div>
+      <div class="kpi"><span class="kl">MA60</span><span class="kv">1,548,742</span></div>
+    </div>
+    <div class="invest-box">
+      <div class="invest-title">[투자포인트]</div>
+      <div class="invest-body">현재가: 2,764,000원 | 목표가: 3,000,000원 | 손절가: 2,500,000원 | 예상수익: +8% | 투자기간: 2주<br>매수근거: RSI가 66.5로 중립 구간에 진입하고 있으며, 5일간 +2.9%의 상승 모멘텀을 보이고 있다. 또한, MA20와 MA60의 정배열이 유지되고 있으며, PER이 6.4배로 업종 평균 대비 저평가된 상태이다. 이는 단기적으로 10% 이상의 수익을 기대할 수 있는 근거이다.<br>리스크: 반도체 시장의 수요 감소로 인한 수익성 악화가 주요 하락 리스크이다.</div>
+    </div>
+  </div>
+
+<div class="section-label">ETF 추천</div>
+
+  <div class="item">
+    <div class="item-header">
+      <div class="left">
+        <div>
+          <div class="sname">KODEX 200 <span class="scode">069500</span></div>
+          <div class="ssector">국내시장대표</div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="sprice">146,910원</div>
+        <div class="schange neg">▼ 0.02%</div>
+      </div>
+    </div>
+    <div class="invest-box"><div class="invest-title">[추천이유]</div><div class="invest-body">| 목표가: 155,000원 | 손절가: 140,000원 | 추천이유: 국내 시장의 대표적인 ETF로, 다양한 섹터의 종목을 포함하고 있으며, 현재가가 저평가된 상태이다. 또한, 최근 5일간의 상승 모멘텀을 보이고 있다.</div></div>
+  </div>
+  <div class="item">
+    <div class="item-header">
+      <div class="left">
+        <div>
+          <div class="sname">KODEX 반도체 <span class="scode">091160</span></div>
+          <div class="ssector">반도체</div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="sprice">181,015원</div>
+        <div class="schange neg">▼ 0.81%</div>
+      </div>
+    </div>
+    <div class="invest-box"><div class="invest-title">[추천이유]</div><div class="invest-body">| 목표가: 190,000원 | 손절가: 170,000원 | 추천이유: 반도체 섹터의 강세를 반영하고 있으며, 현재가가 저평가된 상태이다. 또한, 최근 5일간의 상승 모멘텀을 보이고 있다.</div></div>
+  </div>
+
+<div class="section-label">오늘의 전략</div><div class="strategy-box">💡 오늘 가장 중요한 매매 전략은 과매도 상태에서 탈출하는 종목과 저평가된 종목에 대한 투자 관심을 집중하는 것이다.</div>
+
+<div class="update-time" id="last-update">현재가 갱신 중...</div>
+<div class="footer">⚠️ 본 리포트는 AI 분석 결과이며 투자 손익의 책임은 본인에게 있습니다.</div>
+</div>
+
+<!-- 탭2: 산업별 분석 -->
+<div class="tab-panel" id="tab-industry">
+<div class="section-label">산업별 시총 상위 · RSI · 매물대 · 지지/저항</div>
+
+<div class="ind-section">
+  <div class="ind-section-title">반도체</div>
+  
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">삼성전자</span>
+    <span class="ind-code">005930</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">354,000원</span>
+    <span class="ind-chg neg">▼2.34%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">61.2</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:61.2%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">212,250~227,333</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">287,500</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">348,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">SK하이닉스</span>
+    <span class="ind-code">000660</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">2,764,000원</span>
+    <span class="ind-chg pos">▲2.94%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">64.6</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:64.6%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">2,217,500~2,374,333</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">1,855,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">2,688,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">한미반도체</span>
+    <span class="ind-code">042700</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">295,000원</span>
+    <span class="ind-chg neg">▼6.50%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">52.3</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:52.3%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">279,125~291,333</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">282,500</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">289,500</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">HPSP</span>
+    <span class="ind-code">403870</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">56,600원</span>
+    <span class="ind-chg neg">▼4.71%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">58.0</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:58.0%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">51,662~53,925</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">51,700</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">56,900</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">리노공업</span>
+    <span class="ind-code">058470</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">92,600원</span>
+    <span class="ind-chg pos">▲0.33%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">43.1</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:43.1%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">108,300~111,200</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">85,100</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">99,100</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">원익IPS</span>
+    <span class="ind-code">240810</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">156,000원</span>
+    <span class="ind-chg neg">▼4.41%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">68.4</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:68.4%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">108,150~114,225</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">112,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">168,900</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">솔브레인</span>
+    <span class="ind-code">357780</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">366,000원</span>
+    <span class="ind-chg neg">▼9.18%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">46.5</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:46.5%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">371,000~383,750</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">360,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">381,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">DB하이텍</span>
+    <span class="ind-code">000990</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">156,100원</span>
+    <span class="ind-chg pos">▲1.04%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">31.7</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:31.7%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">148,458~158,766</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">147,600</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">156,100</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">솔브레인홀딩스</span>
+    <span class="ind-code">036830</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">41,000원</span>
+    <span class="ind-chg neg">▼4.87%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">33.9</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:33.9%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">45,750~48,475</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">40,300</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">46,050</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">APS홀딩스</span>
+    <span class="ind-code">054620</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">4,460원</span>
+    <span class="ind-chg neg">▼2.83%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">42.3</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:42.3%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">7,105~7,558</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">3,935</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">4,515</span></div>
+  </div>
+</div>
+</div>
+<div class="ind-section">
+  <div class="ind-section-title">IT·게임·플랫폼</div>
+  
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">NAVER</span>
+    <span class="ind-code">035420</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">229,500원</span>
+    <span class="ind-chg neg">▼2.34%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">54.7</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:54.7%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">196,150~201,500</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">218,500</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">245,500</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">카카오</span>
+    <span class="ind-code">035720</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">37,750원</span>
+    <span class="ind-chg neg">▼3.94%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">40.3</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:40.3%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">47,916~49,058</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">36,500</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">40,550</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">크래프톤</span>
+    <span class="ind-code">259960</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">241,500원</span>
+    <span class="ind-chg pos">▲1.47%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">36.4</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:36.4%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">231,750~236,875</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">230,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">236,500</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">엔씨소프트</span>
+    <span class="ind-code">036570</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">277,000원</span>
+    <span class="ind-chg pos">▲7.16%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">36.8</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:36.8%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">255,083~261,666</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">254,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">266,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">펄어비스</span>
+    <span class="ind-code">263750</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">39,450원</span>
+    <span class="ind-chg pos">▲1.15%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">33.2</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:33.2%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">54,087~56,450</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">37,550</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">40,800</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">넷마블</span>
+    <span class="ind-code">251270</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">40,850원</span>
+    <span class="ind-chg pos">▲1.24%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">40.1</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:40.1%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">49,250~50,275</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">39,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">41,100</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">카카오게임즈</span>
+    <span class="ind-code">293490</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">8,810원</span>
+    <span class="ind-chg neg">▼1.12%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">38.1</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:38.1%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">12,143~12,635</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">8,210</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">8,970</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">위메이드</span>
+    <span class="ind-code">112040</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">16,900원</span>
+    <span class="ind-chg neg">▼3.04%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">30.4</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:30.4%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">19,811~20,510</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">16,320</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">17,940</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">아프리카TV</span>
+    <span class="ind-code">067160</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">46,800원</span>
+    <span class="ind-chg neg">▼2.19%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">37.7</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:37.7%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">59,641~61,000</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">44,700</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">48,300</span></div>
+  </div>
+</div>
+</div>
+<div class="ind-section">
+  <div class="ind-section-title">방산</div>
+  
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">한화에어로스페이스</span>
+    <span class="ind-code">012450</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">1,122,000원</span>
+    <span class="ind-chg neg">▼5.63%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">44.8</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:44.8%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">1,372,000~1,418,333</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">955,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">1,242,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">한국항공우주</span>
+    <span class="ind-code">047810</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">146,500원</span>
+    <span class="ind-chg neg">▼3.62%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">35.4</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:35.4%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">160,150~166,558</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">121,700</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">165,500</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">현대로템</span>
+    <span class="ind-code">064350</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">207,000원</span>
+    <span class="ind-chg neg">▼2.13%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">53.0</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:53.0%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">199,466~207,158</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">201,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">205,500</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">한화시스템</span>
+    <span class="ind-code">272210</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">91,100원</span>
+    <span class="ind-chg neg">▼5.20%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">38.0</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:38.0%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">129,008~133,300</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">81,800</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">102,300</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">LIG넥스원</span>
+    <span class="ind-code">079550</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">852,000원</span>
+    <span class="ind-chg neg">▼3.62%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">52.5</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:52.5%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">918,166~949,583</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">818,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">858,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">한화</span>
+    <span class="ind-code">000880</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">115,200원</span>
+    <span class="ind-chg neg">▼4.71%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">30.3</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:30.3%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">109,750~112,925</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">110,400</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">130,700</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">현대일렉트릭</span>
+    <span class="ind-code">267260</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">1,078,000원</span>
+    <span class="ind-chg neg">▼0.83%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">52.5</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:52.5%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">1,009,000~1,053,750</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">1,035,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">1,118,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">두산밥캣</span>
+    <span class="ind-code">241560</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">65,300원</span>
+    <span class="ind-chg neg">▼0.91%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">48.3</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:48.3%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">67,533~69,166</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">59,300</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">67,600</span></div>
+  </div>
+</div>
+</div>
+<div class="ind-section">
+  <div class="ind-section-title">조선·해운</div>
+  
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">HD한국조선해양</span>
+    <span class="ind-code">009540</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">419,000원</span>
+    <span class="ind-chg neg">▼0.48%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">50.3</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:50.3%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">396,333~407,500</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">384,500</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">436,500</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">삼성중공업</span>
+    <span class="ind-code">010140</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">27,550원</span>
+    <span class="ind-chg neg">▼0.54%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">46.7</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:46.7%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">27,316~28,095</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">24,550</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">28,350</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">한화오션</span>
+    <span class="ind-code">042660</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">128,400원</span>
+    <span class="ind-chg pos">▲2.64%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">50.2</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:50.2%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">119,250~122,000</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">120,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">123,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">HD현대미포조선</span>
+    <span class="ind-code">010620</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">-</span>
+    <span class="ind-chg pos">▲0.00%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#1a73e8">1.8</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:1.8%;background:#1a73e8"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">182,250~202,500</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">-</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">196,700</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">HD현대중공업</span>
+    <span class="ind-code">329180</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">667,000원</span>
+    <span class="ind-chg neg">▼2.49%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">41.3</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:41.3%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">671,333~695,666</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">644,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">679,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">HMM</span>
+    <span class="ind-code">011200</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">20,150원</span>
+    <span class="ind-chg neg">▼1.47%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">51.4</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:51.4%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">19,233~19,541</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">19,250</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">19,500</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">팬오션</span>
+    <span class="ind-code">028670</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">5,180원</span>
+    <span class="ind-chg pos">▲0.97%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">41.5</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:41.5%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">4,960~5,070</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">4,650</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">5,600</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">대한해운</span>
+    <span class="ind-code">005880</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">1,983원</span>
+    <span class="ind-chg neg">▼3.74%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">32.4</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:32.4%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">2,574~2,652</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">1,866</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">2,320</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">현대글로비스</span>
+    <span class="ind-code">086280</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">222,500원</span>
+    <span class="ind-chg pos">▲4.95%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">37.9</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:37.9%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">223,500~230,083</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">205,500</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">228,500</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">CJ대한통운</span>
+    <span class="ind-code">000120</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">80,300원</span>
+    <span class="ind-chg neg">▼1.35%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">41.2</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:41.2%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">101,850~104,700</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">76,200</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">85,300</span></div>
+  </div>
+</div>
+</div>
+<div class="ind-section">
+  <div class="ind-section-title">바이오·헬스</div>
+  
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">삼성바이오로직스</span>
+    <span class="ind-code">207940</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">1,374,000원</span>
+    <span class="ind-chg neg">▼3.92%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">51.6</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:51.6%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">1,539,666~1,570,833</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">1,336,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">1,350,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">셀트리온</span>
+    <span class="ind-code">068270</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">170,300원</span>
+    <span class="ind-chg neg">▼1.90%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">36.5</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:36.5%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">190,043~193,197</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">158,500</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">173,500</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">휴젤</span>
+    <span class="ind-code">145020</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">242,000원</span>
+    <span class="ind-chg neg">▼3.59%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">47.2</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:47.2%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">253,166~258,500</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">226,500</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">246,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">알테오젠</span>
+    <span class="ind-code">196170</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">353,500원</span>
+    <span class="ind-chg neg">▼4.33%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">46.2</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:46.2%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">354,625~362,250</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">340,500</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">362,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">SK바이오팜</span>
+    <span class="ind-code">326030</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">87,000원</span>
+    <span class="ind-chg neg">▼1.92%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">40.3</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:40.3%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">96,333~98,250</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">81,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">90,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">클래시스</span>
+    <span class="ind-code">214150</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">46,700원</span>
+    <span class="ind-chg pos">▲1.63%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">51.5</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:51.5%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">51,554~53,183</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">40,150</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">50,200</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">한미약품</span>
+    <span class="ind-code">128940</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">411,000원</span>
+    <span class="ind-chg neg">▼3.41%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">34.3</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:34.3%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">477,166~490,333</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">385,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">451,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">종근당</span>
+    <span class="ind-code">185750</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">69,900원</span>
+    <span class="ind-chg neg">▼1.69%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#1a73e8">23.7</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:23.7%;background:#1a73e8"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">86,316~88,158</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">67,900</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">72,400</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">동화약품</span>
+    <span class="ind-code">000020</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">5,080원</span>
+    <span class="ind-chg neg">▼2.12%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#1a73e8">18.8</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:18.8%;background:#1a73e8"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">5,782~5,871</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">4,980</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">5,340</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">동아에스티</span>
+    <span class="ind-code">170900</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">34,200원</span>
+    <span class="ind-chg neg">▼4.07%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#1a73e8">16.5</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:16.5%;background:#1a73e8"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">42,937~43,908</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">34,200</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">36,500</span></div>
+  </div>
+</div>
+</div>
+<div class="ind-section">
+  <div class="ind-section-title">2차전지</div>
+  
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">삼성SDI</span>
+    <span class="ind-code">006400</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">555,000원</span>
+    <span class="ind-chg pos">▲6.32%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#1a73e8">28.5</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:28.5%;background:#1a73e8"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">614,250~640,833</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">466,500</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">546,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">에코프로</span>
+    <span class="ind-code">086520</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">116,000원</span>
+    <span class="ind-chg neg">▼1.28%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">32.1</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:32.1%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">153,783~158,700</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">99,700</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">121,200</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">에코프로비엠</span>
+    <span class="ind-code">247540</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">169,400원</span>
+    <span class="ind-chg neg">▼1.68%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#1a73e8">26.8</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:26.8%;background:#1a73e8"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">191,750~197,791</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">155,500</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">179,100</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">SK이노베이션</span>
+    <span class="ind-code">096770</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">102,400원</span>
+    <span class="ind-chg neg">▼1.06%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">33.5</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:33.5%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">118,291~122,050</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">99,500</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">110,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">포스코퓨처엠</span>
+    <span class="ind-code">003670</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">199,500원</span>
+    <span class="ind-chg neg">▼1.24%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#1a73e8">29.4</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:29.4%;background:#1a73e8"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">203,550~212,266</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">190,400</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">205,500</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">엘앤에프</span>
+    <span class="ind-code">066970</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">128,600원</span>
+    <span class="ind-chg pos">▲0.55%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">31.1</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:31.1%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">146,933~154,441</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">117,300</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">153,800</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">PI첨단소재</span>
+    <span class="ind-code">178920</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">21,200원</span>
+    <span class="ind-chg neg">▼6.19%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">32.8</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:32.8%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">25,010~25,908</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">19,620</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">23,100</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">SKC</span>
+    <span class="ind-code">011790</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">119,600원</span>
+    <span class="ind-chg neg">▼4.78%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">44.0</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:44.0%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">131,967~138,574</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">85,722</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">142,600</span></div>
+  </div>
+</div>
+</div>
+<div class="ind-section">
+  <div class="ind-section-title">자동차·부품</div>
+  
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">현대차</span>
+    <span class="ind-code">005380</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">613,000원</span>
+    <span class="ind-chg pos">▲2.00%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">31.9</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:31.9%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">515,500~539,000</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">570,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">633,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">기아</span>
+    <span class="ind-code">000270</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">154,900원</span>
+    <span class="ind-chg neg">▼2.46%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">41.4</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:41.4%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">148,766~151,250</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">151,700</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">154,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">현대모비스</span>
+    <span class="ind-code">012330</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">612,000원</span>
+    <span class="ind-chg pos">▲1.49%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">36.4</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:36.4%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">376,500~406,958</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">534,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">635,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">HL만도</span>
+    <span class="ind-code">204320</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">65,300원</span>
+    <span class="ind-chg neg">▼5.09%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">51.6</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:51.6%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">51,183~53,175</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">52,400</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">71,100</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">금호타이어</span>
+    <span class="ind-code">073240</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">4,705원</span>
+    <span class="ind-chg neg">▼1.57%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">48.9</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:48.9%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">5,875~6,027</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">4,350</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">4,695</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">한국타이어앤테크놀로지</span>
+    <span class="ind-code">161390</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">66,700원</span>
+    <span class="ind-chg pos">▲1.68%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">51.6</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:51.6%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">60,733~62,500</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">60,700</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">68,100</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">한온시스템</span>
+    <span class="ind-code">018880</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">4,515원</span>
+    <span class="ind-chg neg">▼2.69%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">36.1</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:36.1%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">4,820~4,950</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">4,260</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">4,950</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">HL홀딩스</span>
+    <span class="ind-code">014790</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">2,615원</span>
+    <span class="ind-chg neg">▼4.21%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">38.7</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:38.7%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">3,389~3,487</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">2,410</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">2,860</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">LG이노텍</span>
+    <span class="ind-code">011070</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">1,145,000원</span>
+    <span class="ind-chg neg">▼10.76%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">49.1</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:49.1%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">984,791~1,085,833</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">976,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">1,210,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">DN오토모티브</span>
+    <span class="ind-code">007340</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">42,050원</span>
+    <span class="ind-chg neg">▼1.52%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">45.3</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:45.3%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">37,775~39,166</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">37,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">45,750</span></div>
+  </div>
+</div>
+</div>
+<div class="ind-section">
+  <div class="ind-section-title">금융·보험</div>
+  
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">KB금융</span>
+    <span class="ind-code">105560</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">158,300원</span>
+    <span class="ind-chg neg">▼2.94%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">54.4</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:54.4%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">148,700~151,133</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">149,200</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">157,300</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">신한지주</span>
+    <span class="ind-code">055550</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">100,900원</span>
+    <span class="ind-chg pos">▲0.10%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">59.0</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:59.0%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">96,400~97,916</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">97,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">99,200</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">하나금융지주</span>
+    <span class="ind-code">086790</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">123,500원</span>
+    <span class="ind-chg neg">▼2.06%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">58.3</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:58.3%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">120,066~122,175</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">118,200</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">122,700</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">기업은행</span>
+    <span class="ind-code">024110</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">21,450원</span>
+    <span class="ind-chg neg">▼1.83%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">59.8</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:59.8%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">20,073~20,366</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">20,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">21,900</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">삼성화재</span>
+    <span class="ind-code">000810</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">700,000원</span>
+    <span class="ind-chg pos">▲0.00%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#e5341a">72.3</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:72.3%;background:#e5341a"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">441,583~464,166</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">596,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">690,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">삼성생명</span>
+    <span class="ind-code">032830</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">497,000원</span>
+    <span class="ind-chg pos">▲5.97%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">69.0</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:69.0%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">230,541~253,083</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">342,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">478,500</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">한화생명</span>
+    <span class="ind-code">088350</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">5,220원</span>
+    <span class="ind-chg neg">▼4.04%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">56.6</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:56.6%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">4,681~4,783</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">4,735</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">5,600</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">DGB금융지주</span>
+    <span class="ind-code">139130</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">16,960원</span>
+    <span class="ind-chg neg">▼1.97%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">45.2</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:45.2%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">18,752~18,980</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">16,460</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">16,770</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">한국금융지주</span>
+    <span class="ind-code">071050</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">231,000원</span>
+    <span class="ind-chg pos">▲0.22%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">47.8</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:47.8%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">251,125~256,750</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">220,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">245,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">메리츠화재</span>
+    <span class="ind-code">000060</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">-</span>
+    <span class="ind-chg pos">▲0.00%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#e5341a">100.0</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:100.0%;background:#e5341a"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">41,475~46,083</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">-</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">47,300</span></div>
+  </div>
+</div>
+</div>
+<div class="ind-section">
+  <div class="ind-section-title">철강·소재</div>
+  
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">POSCO홀딩스</span>
+    <span class="ind-code">005490</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">356,500원</span>
+    <span class="ind-chg neg">▼2.86%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">31.9</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:31.9%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">342,416~357,833</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">342,500</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">388,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">현대제철</span>
+    <span class="ind-code">004020</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">32,750원</span>
+    <span class="ind-chg neg">▼1.80%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#1a73e8">28.9</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:28.9%;background:#1a73e8"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">38,200~39,400</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">31,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">34,250</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">동국제강</span>
+    <span class="ind-code">001230</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">1,917원</span>
+    <span class="ind-chg neg">▼4.86%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">45.1</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:45.1%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">2,465~2,545</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">1,588</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">2,399</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">코오롱인더</span>
+    <span class="ind-code">009730</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">181원</span>
+    <span class="ind-chg pos">▲0.00%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#1a73e8">11.1</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:11.1%;background:#1a73e8"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">511~558</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">-</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">203</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">KCC</span>
+    <span class="ind-code">002380</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">524,000원</span>
+    <span class="ind-chg neg">▼1.69%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">43.8</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:43.8%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">540,666~553,333</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">472,500</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">553,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">OCI</span>
+    <span class="ind-code">010060</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">256,500원</span>
+    <span class="ind-chg neg">▼5.52%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">32.8</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:32.8%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">300,300~316,475</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">232,500</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">334,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">대한전선</span>
+    <span class="ind-code">001440</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">38,250원</span>
+    <span class="ind-chg neg">▼3.16%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">31.7</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:31.7%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">37,075~40,600</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">34,650</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">40,500</span></div>
+  </div>
+</div>
+</div>
+<div class="ind-section">
+  <div class="ind-section-title">화학·에너지</div>
+  
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">LG화학</span>
+    <span class="ind-code">051910</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">338,000원</span>
+    <span class="ind-chg neg">▼1.31%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">44.7</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:44.7%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">346,375~356,250</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">304,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">349,500</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">롯데케미칼</span>
+    <span class="ind-code">011170</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">76,700원</span>
+    <span class="ind-chg neg">▼3.52%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">42.8</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:42.8%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">78,100~81,350</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">71,600</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">82,500</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">한화솔루션</span>
+    <span class="ind-code">009830</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">38,050원</span>
+    <span class="ind-chg neg">▼0.13%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">46.0</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:46.0%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">36,518~37,724</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">32,541</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">39,946</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">S-Oil</span>
+    <span class="ind-code">010950</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">105,300원</span>
+    <span class="ind-chg pos">▲0.19%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">50.0</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:50.0%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">104,600~107,100</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">102,100</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">107,900</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">GS</span>
+    <span class="ind-code">078930</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">70,000원</span>
+    <span class="ind-chg neg">▼1.82%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">43.3</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:43.3%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">70,091~71,650</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">62,300</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">72,400</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">금호석유</span>
+    <span class="ind-code">011780</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">125,000원</span>
+    <span class="ind-chg neg">▼3.10%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">38.2</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:38.2%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">127,725~130,250</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">116,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">136,300</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">한국전력</span>
+    <span class="ind-code">015760</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">37,900원</span>
+    <span class="ind-chg neg">▼3.68%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">45.5</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:45.5%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">45,266~46,200</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">36,200</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">40,400</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">한국가스공사</span>
+    <span class="ind-code">036460</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">34,400원</span>
+    <span class="ind-chg neg">▼1.01%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">43.8</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:43.8%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">35,900~36,341</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">33,250</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">35,150</span></div>
+  </div>
+</div>
+</div>
+<div class="ind-section">
+  <div class="ind-section-title">전자·통신</div>
+  
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">SK텔레콤</span>
+    <span class="ind-code">017670</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">94,900원</span>
+    <span class="ind-chg neg">▼1.04%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">44.8</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:44.8%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">96,600~99,700</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">91,400</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">97,300</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">KT</span>
+    <span class="ind-code">030200</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">53,300원</span>
+    <span class="ind-chg neg">▼0.37%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">51.6</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:51.6%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">60,100~61,150</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">51,900</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">53,400</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">LG유플러스</span>
+    <span class="ind-code">032640</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">14,710원</span>
+    <span class="ind-chg neg">▼2.00%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">42.4</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:42.4%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">15,323~15,584</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">14,280</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">15,460</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">스카이라이프</span>
+    <span class="ind-code">053210</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">4,445원</span>
+    <span class="ind-chg neg">▼0.45%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">44.8</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:44.8%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">4,393~4,465</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">4,250</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">4,415</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">LG전자</span>
+    <span class="ind-code">066570</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">211,500원</span>
+    <span class="ind-chg neg">▼7.44%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">43.2</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:43.2%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">209,808~231,050</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">175,300</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">232,500</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">LG디스플레이</span>
+    <span class="ind-code">034220</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">13,570원</span>
+    <span class="ind-chg pos">▲0.30%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">36.5</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:36.5%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">12,276~12,660</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">12,130</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">14,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">삼성전기</span>
+    <span class="ind-code">009150</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">2,270,000원</span>
+    <span class="ind-chg pos">▲3.18%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">59.6</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:59.6%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">1,578,166~1,725,875</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">1,552,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">2,169,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">삼성SDS</span>
+    <span class="ind-code">018260</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">212,000원</span>
+    <span class="ind-chg neg">▼4.07%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">38.8</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:38.8%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">160,091~174,083</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">171,200</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">238,500</span></div>
+  </div>
+</div>
+</div>
+<div class="ind-section">
+  <div class="ind-section-title">건설·인프라</div>
+  
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">현대건설</span>
+    <span class="ind-code">000720</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">128,600원</span>
+    <span class="ind-chg neg">▼3.45%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">40.8</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:40.8%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">147,100~152,433</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">115,100</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">141,900</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">삼성물산</span>
+    <span class="ind-code">028260</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">491,500원</span>
+    <span class="ind-chg pos">▲1.24%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">61.8</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:61.8%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">285,416~305,375</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">385,500</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">482,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">대우건설</span>
+    <span class="ind-code">047040</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">21,250원</span>
+    <span class="ind-chg neg">▼7.41%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">38.2</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:38.2%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">26,904~28,543</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">19,250</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">29,300</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">GS건설</span>
+    <span class="ind-code">006360</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">26,550원</span>
+    <span class="ind-chg neg">▼4.15%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">44.0</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:44.0%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">27,166~28,525</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">24,750</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">29,700</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">두산에너빌리티</span>
+    <span class="ind-code">034020</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">97,900원</span>
+    <span class="ind-chg neg">▼1.71%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">42.7</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:42.7%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">96,775~100,600</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">91,100</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">96,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">LS ELECTRIC</span>
+    <span class="ind-code">010120</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">259,000원</span>
+    <span class="ind-chg pos">▲7.02%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">55.4</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:55.4%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">236,041~249,333</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">231,500</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">254,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">포스코인터내셔널</span>
+    <span class="ind-code">047050</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">55,000원</span>
+    <span class="ind-chg neg">▼2.31%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#1a73e8">29.2</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:29.2%;background:#1a73e8"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">71,700~74,300</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">53,500</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">68,300</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">대한항공</span>
+    <span class="ind-code">003490</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">27,950원</span>
+    <span class="ind-chg neg">▼3.12%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">54.3</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:54.3%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">24,275~24,766</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">24,700</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">28,700</span></div>
+  </div>
+</div>
+</div>
+<div class="ind-section">
+  <div class="ind-section-title">유통·소비재</div>
+  
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">이마트</span>
+    <span class="ind-code">139480</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">86,400원</span>
+    <span class="ind-chg neg">▼1.26%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">47.4</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:47.4%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">87,433~89,850</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">83,100</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">89,700</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">롯데쇼핑</span>
+    <span class="ind-code">023530</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">179,900원</span>
+    <span class="ind-chg neg">▼4.66%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">64.2</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:64.2%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">99,100~107,300</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">149,600</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">188,300</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">신세계</span>
+    <span class="ind-code">004170</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">711,000원</span>
+    <span class="ind-chg neg">▼2.60%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#e5341a">72.9</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:72.9%;background:#e5341a"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">368,083~404,375</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">498,500</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">731,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">현대백화점</span>
+    <span class="ind-code">069960</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">194,700원</span>
+    <span class="ind-chg neg">▼4.56%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#e5341a">85.8</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:85.8%;background:#e5341a"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">106,075~116,733</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">106,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">202,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">CJ제일제당</span>
+    <span class="ind-code">097950</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">193,300원</span>
+    <span class="ind-chg pos">▲0.21%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">35.1</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:35.1%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">228,425~232,950</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">187,700</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">199,700</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">오리온</span>
+    <span class="ind-code">271560</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">134,000원</span>
+    <span class="ind-chg pos">▲0.00%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">55.9</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:55.9%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">129,466~131,458</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">128,100</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">131,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">롯데칠성</span>
+    <span class="ind-code">005300</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">101,500원</span>
+    <span class="ind-chg neg">▼1.65%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">32.7</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:32.7%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">111,250~113,125</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">100,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">106,300</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">대상</span>
+    <span class="ind-code">001680</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">17,540원</span>
+    <span class="ind-chg neg">▼1.79%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#1a73e8">29.4</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:29.4%;background:#1a73e8"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">19,936~20,252</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">17,410</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">18,530</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">F&F</span>
+    <span class="ind-code">383220</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">81,300원</span>
+    <span class="ind-chg pos">▲1.12%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">69.7</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:69.7%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">65,400~67,300</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">68,800</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">81,200</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">영원무역</span>
+    <span class="ind-code">111770</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">78,000원</span>
+    <span class="ind-chg pos">▲0.13%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">45.3</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:45.3%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">78,958~80,150</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">73,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">78,800</span></div>
+  </div>
+</div>
+</div>
+<div class="ind-section">
+  <div class="ind-section-title">엔터·미디어</div>
+  
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">하이브</span>
+    <span class="ind-code">352820</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">223,500원</span>
+    <span class="ind-chg neg">▼1.97%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">53.1</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:53.1%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">238,958~247,750</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">195,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">240,000</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">에스엠</span>
+    <span class="ind-code">041510</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">76,400원</span>
+    <span class="ind-chg neg">▼3.66%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">47.0</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:47.0%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">83,100~85,316</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">69,800</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">82,300</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">JYP Ent.</span>
+    <span class="ind-code">035900</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">54,500원</span>
+    <span class="ind-chg neg">▼2.50%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">42.9</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:42.9%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">58,966~60,125</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">49,700</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">60,100</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">YG엔터테인먼트</span>
+    <span class="ind-code">122870</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">45,250원</span>
+    <span class="ind-chg neg">▼2.90%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">51.6</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:51.6%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">52,833~54,216</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">39,000</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">49,050</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">CJ ENM</span>
+    <span class="ind-code">035760</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">35,750원</span>
+    <span class="ind-chg neg">▼2.72%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">31.9</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:31.9%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">53,350~55,366</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">35,200</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">38,100</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">제이콘텐트리</span>
+    <span class="ind-code">036420</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">4,995원</span>
+    <span class="ind-chg pos">▲0.00%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#1a73e8">14.2</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:14.2%;background:#1a73e8"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">5,775~6,300</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">-</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">4,995</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">SBS</span>
+    <span class="ind-code">034120</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">12,300원</span>
+    <span class="ind-chg neg">▼3.53%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">41.6</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:41.6%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">15,512~15,881</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">12,190</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">12,790</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">CJ CGV</span>
+    <span class="ind-code">079160</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">4,490원</span>
+    <span class="ind-chg neg">▼2.07%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">48.4</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:48.4%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">4,833~4,889</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">4,275</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">4,670</span></div>
+  </div>
+</div>
+<div class="ind-row">
+  <div class="ind-name">
+    <span class="ind-sname">제일기획</span>
+    <span class="ind-code">030000</span>
+  </div>
+  <div class="ind-price-col">
+    <span class="ind-price">19,280원</span>
+    <span class="ind-chg pos">▲0.42%</span>
+    
+  </div>
+  <div class="ind-rsi-col">
+    <div class="rsi-label-row">
+      <span class="rsi-label">RSI</span>
+      <span class="rsi-val" style="color:#3b82f6">56.8</span>
+    </div>
+    <div class="rsi-bar-bg">
+      <div class="rsi-bar" style="width:56.8%;background:#3b82f6"></div>
+      <div class="rsi-mark30"></div>
+      <div class="rsi-mark70"></div>
+    </div>
+  </div>
+  <div class="ind-levels">
+    <div class="level-row"><span class="lk">매물대</span><span class="lv poc">18,860~19,080</span></div>
+    <div class="level-row"><span class="lk">지지</span><span class="lv sup">18,750</span></div>
+    <div class="level-row"><span class="lk">저항</span><span class="lv res">19,060</span></div>
+  </div>
+</div>
+</div>
+<div class="footer">RSI 기준선: 30(과매도) / 70(과매수) · 매물대(보라) · 지지(초록) · 저항(빨강)</div>
+</div>
+
+<script>
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',['recommend','industry'][i]===name));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active',p.id==='tab-'+name));
+}
+const codes = {"006400": "006400.KS", "036570": "036570.KS", "005930": "005930.KS", "105560": "105560.KS", "000660": "000660.KS"};
+async function updatePrices() {
+  for (const [code, ticker] of Object.entries(codes)) {
+    try {
+      const r = await fetch(`https://query1.finance.yahoo.com/v8/finance/chart/${ticker}?interval=1d&range=1d`);
+      const meta = (await r.json())?.chart?.result?.[0]?.meta;
+      if (!meta) continue;
+      const price = meta.regularMarketPrice;
+      const chg = ((price - meta.previousClose) / meta.previousClose * 100);
+      const isPos = chg >= 0;
+      const pe = document.getElementById('price-' + code);
+      const ce = document.getElementById('change-' + code);
+      if (pe) pe.textContent = price.toLocaleString('ko-KR') + '원';
+      if (ce) {
+        ce.textContent = (isPos ? '▲ ' : '▼ ') + Math.abs(chg).toFixed(2) + '%';
+        ce.className = 'schange ' + (isPos ? 'pos' : 'neg');
+      }
+    } catch(e) {}
+  }
+  document.getElementById('last-update').textContent = '현재가 갱신: ' + new Date().toLocaleTimeString('ko-KR');
+}
+updatePrices();
+setInterval(updatePrices, 30000);
+</script>
+</body>
+</html>
