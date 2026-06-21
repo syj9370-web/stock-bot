@@ -18,8 +18,9 @@ jobs:
 
       - name: 패키지 설치
         run: |
-          pip install -r requirements.txt
-          pip install groq
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -c "import groq; print('✅ groq 설치 확인')"
 
       - name: 봇 실행
         env:
